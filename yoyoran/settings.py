@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'yoyozj',
     'bootstrap3',
+    'yoyobd',
 ]
 
 MIDDLEWARE = [
@@ -77,9 +78,18 @@ WSGI_APPLICATION = 'yoyoran.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': 'yoyoran',
+        'ENGINE': 'django.db.backends.mysql',
+        'USER': 'root',
+        'PASSWORD': 'root',
+        # 'HOST': '192.168.0.41',
+        'HOST': 'localhost',
+        'PORT': '3306'
     }
 }
 
