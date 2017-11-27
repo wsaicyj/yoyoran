@@ -2,10 +2,10 @@
 # -*- coding: utf-8 -*-
 
 from django.conf.urls import url
-from .views import index, freshfood
+from .views import index, fresh_food
 
 
 urlpatterns = [
     url(r'^$', index, name='index'),
-    url(r'^freshfood/$', freshfood, name='freshfood'),
+    url(r'^fresh_food/$', fresh_food, name='fresh_food'),
 ]
