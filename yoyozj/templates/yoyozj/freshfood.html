@@ -6,23 +6,21 @@
 {% block content %}
     <link href="{% static 'css/fresh_food.css' %}" rel="stylesheet">
     <!-- Content -->
-    <div class="container">
+    <div class="container seafood-content">
 
         <!-- Heading -->
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">Portfolio
-                    <small>Recent Work</small>
+                <h1 class="page-header">友家海鲜
+                    <small>新鲜食材</small>
                 </h1>
             </div>
         </div>
         <!-- /.row -->
-        {{ fresh_food_list.count }}
-        {% for fresh in fresh_food_list %}
-            {{ forloop.counter }}
-            <!-- Projects Row -->
-            <div class="row">
-            {% if forloop.counter|divisibleby:2 %}
+
+        <!-- Projects Row -->
+        <div class="row">
+            {% for fresh in fresh_food_list %}
                 <div class="col-md-6 portfolio-item">
                     <a href="#">
                         <img class="img-responsive" src="{% static 'images/bridge.jpg' %}" alt="">
@@ -32,21 +30,19 @@
                     </h3>
                     <p class="line-limit-length">{{ fresh.content }}</p>
                 </div>
-            {% endif %}
-            {% if forloop.counter|divisibleby:2 %}
-                <div class="col-md-6 portfolio-item">
-                    <a href="#">
-                        <img class="img-responsive" src="{% static 'images/timg2.jpg' %}" alt="">
-                    </a>
-                    <h3>
-                        <a href="#">{{ fresh.title }}</a>
-                    </h3>
-                    <p class="line-limit-length">{{ fresh.content }}</p>
-                </div>
-            {% endif %}
-            </div>
-            <!-- /.row -->
-        {% endfor %}
+            {% endfor %}
+            {#                <div class="col-md-6 portfolio-item">#}
+            {#                    <a href="#">#}
+            {#                        <img class="img-responsive" src="{% static 'images/timg2.jpg' %}" alt="">#}
+            {#                    </a>#}
+            {#                    <h3>#}
+            {#                        <a href="#">{{ fresh.title }}</a>#}
+            {#                    </h3>#}
+            {#                    <p class="line-limit-length">{{ fresh.content }}</p>#}
+            {#                </div>#}
+        </div>
+        <!-- /.row -->
+
 
         {#            <!-- Projects Row -->#}
         {#            <div class="row">#}
